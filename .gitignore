@@ -1,0 +1,24 @@
+#OS Cruft
+.DS_Store
+Thumbs.db
+
+# Compiled class file
+*.class
+
+# Log files
+*.log
+
+#.data file
+*.data
+
+# Archives
+*.jar
+*.war
+*.ear
+
+# Misc
+*.sso
+
+# Unwanted directories
+classes/
+deploy/
