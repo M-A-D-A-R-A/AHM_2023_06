@@ -1,2 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2"></adfc-config>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="index">
+    <page>/index.jspx</page>
+  </view>
+  <view id="dashboard">
+    <page>/dashboard.jsf</page>
+  </view>
+  <view id="customer">
+    <page>/customer.jsf</page>
+  </view>
+  <control-flow-rule id="__5">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__6">
+      <from-outcome>dashboard</from-outcome>
+      <to-activity-id>dashboard</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__7">
+      <from-outcome>index</from-outcome>
+      <to-activity-id>index</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__3">
+      <from-outcome>customer</from-outcome>
+      <to-activity-id>customer</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <managed-bean id="__1">
+    <managed-bean-name>login</managed-bean-name>
+    <managed-bean-class>view.bean.LoginBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="LoanEO"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="LOAN"
+  AliasName="LoanEO"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="LoanId"
+    IsNotNull="true"
+    ColumnName="LOAN_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="LOAN"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="CustomerId"
+    ColumnName="CUSTOMER_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="LOAN"/>
+  <Attribute
+    Name="ApplicationId"
+    ColumnName="APPLICATION_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="LOAN"/>
+  <Attribute
+    Name="Status"
+    Precision="20"
+    ColumnName="STATUS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="LOAN">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PickupEmployee"
+    ColumnName="PICKUP_EMPLOYEE"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="LOAN"/>
+  <Attribute
+    Name="VerificationEmployee"
+    ColumnName="VERIFICATION_EMPLOYEE"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="LOAN"/>
+  <Attribute
+    Name="LegalEmployee"
+    ColumnName="LEGAL_EMPLOYEE"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="LOAN"/>
+  <Attribute
+    Name="Dummy1"
+    Precision="20"
+    ColumnName="DUMMY1"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="LOAN">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Dummy2"
+    ColumnName="DUMMY2"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="LOAN"/>
+  <AccessorAttribute
+    Name="Customer"
+    Association="model.eo.assoc.CustomerIdFkASSEC"
+    AssociationEnd="model.eo.assoc.CustomerIdFkASSEC.Customer"
+    AssociationOtherEnd="model.eo.assoc.CustomerIdFkASSEC.Loan"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Employees"
+    Association="model.eo.assoc.LegalEmpASSEC"
+    AssociationEnd="model.eo.assoc.LegalEmpASSEC.Employees"
+    AssociationOtherEnd="model.eo.assoc.LegalEmpASSEC.Loan"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Employees1"
+    Association="model.eo.assoc.PickupEmpASSEC"
+    AssociationEnd="model.eo.assoc.PickupEmpASSEC.Employees1"
+    AssociationOtherEnd="model.eo.assoc.PickupEmpASSEC.Loan1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Employees2"
+    Association="model.eo.assoc.VerificationEmpASSEC"
+    AssociationEnd="model.eo.assoc.VerificationEmpASSEC.Employees2"
+    AssociationOtherEnd="model.eo.assoc.VerificationEmpASSEC.Loan2"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="LoanBank"
+    Association="model.eo.assoc.ApplicationFkASSEC"
+    AssociationEnd="model.eo.assoc.ApplicationFkASSEC.LoanBank"
+    AssociationOtherEnd="model.eo.assoc.ApplicationFkASSEC.Loan"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="LoanPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="LOAN_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.LoanEO.LoanId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ApplicationFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="LOAN_BANK_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="APPLICATION_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.LoanEO.ApplicationId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="CustomerIdFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="SYS_C008340"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="CUSTOMER_ID_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.LoanEO.CustomerId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="LegalEmp">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="EMPLOYEES_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="LEGAL_EMP"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.LoanEO.LegalEmployee"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="PickupEmp">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="EMPLOYEES_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PICKUP_EMP"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.LoanEO.PickupEmployee"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="VerificationEmp">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="EMPLOYEES_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="VERIFICATION_EMP"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.LoanEO.VerificationEmployee"/>
+    </AttrArray>
+  </Key>
+</Entity>

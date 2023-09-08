@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <af:document title="School || Login" id="d1">
+    <af:form id="f1">
+      <af:panelSplitter id="ps1" splitterPosition="250" orientation="vertical">
+        <f:facet name="first">
+          <af:panelGroupLayout id="pgl1" layout="vertical">
+            <af:panelGroupLayout id="pgl2" inlineStyle="background-color:#e70000;" layout="vertical">
+              <af:spacer width="10" height="20" id="s4"/>
+              <af:panelGroupLayout id="pgl5" layout="horizontal">
+                <af:spacer width="20" height="10" id="s5"/>
+                <af:image source="/images/loanApp.jpg" id="i1"/>
+              </af:panelGroupLayout>
+              <af:spacer width="10" height="30" id="s1"/>
+              <af:panelGroupLayout id="pgl4" layout="horizontal">
+                <af:spacer width="100" height="10" id="s3"/>
+                <af:outputText value="LOAN MANAGMENT SYSTEM" id="ot1"
+                               inlineStyle="color:White; font-size:large; font-weight:bold;"/>
+              </af:panelGroupLayout>
+              <af:spacer width="10" height="50" id="s6"/>
+            </af:panelGroupLayout>
+            <af:panelGroupLayout id="pgl3" inlineStyle="background-color:#ffa5a5;" layout="vertical">
+              <af:spacer width="10" height="50" id="s2"/>
+            </af:panelGroupLayout>
+          </af:panelGroupLayout>
+        </f:facet>
+        <f:facet name="second">
+          <af:panelStretchLayout id="psl1">
+            <f:facet name="start"/>
+            <f:facet name="end"/>
+            <f:facet name="top"/>
+            <f:facet name="bottom">
+              <af:outputText value="Copyright @2023. All rights reserved" id="ot2"/>
+            </f:facet>
+            <f:facet name="center">
+              <af:panelGroupLayout id="pgl7" layout="horizontal" halign="center">
+                <af:panelGroupLayout id="pgl6" layout="horizontal" halign="center">
+                  <af:spacer width="500" height="10" id="s7"/>
+                  <af:panelFormLayout id="pfl1">
+                    <f:facet name="footer">
+                      <af:button text="Login" id="b1" action="#{login.loginAction}"/>
+                    </f:facet>
+                    <af:inputText label="Username" id="it1" required="true" binding="#{login.usernameInputText}"/>
+                    <af:inputText label="Password" id="it2" required="true" secret="true"
+                                  binding="#{login.passwordInputText}"/>
+                  </af:panelFormLayout>
+                </af:panelGroupLayout>
+              </af:panelGroupLayout>
+            </f:facet>
+          </af:panelStretchLayout>
+        </f:facet>
+      </af:panelSplitter>
+    </af:form>
+  </af:document>
+</f:view>

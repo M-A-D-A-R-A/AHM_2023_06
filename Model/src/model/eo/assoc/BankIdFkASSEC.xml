@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="BankIdFkASSEC"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="Bank"
+    Cardinality="1"
+    Source="true"
+    Owner="model.eo.BankEO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Bank"/>
+      <Attr Name="_foreignKey" Value="model.eo.BankEO.BankPk"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.BankEO.BankId"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="LoanBank"
+    Cardinality="-1"
+    Owner="model.eo.LoanBankEO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="LoanBank"/>
+      <Attr Name="_foreignKey" Value="model.eo.LoanBankEO.BankIdFk"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.LoanBankEO.BankId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

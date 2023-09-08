@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="VerificationEmpASSEC"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="Employees2"
+    Cardinality="1"
+    Source="true"
+    Owner="model.eo.EmployeesEO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Employees2"/>
+      <Attr Name="_foreignKey" Value="model.eo.EmployeesEO.EmployeesPk"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.EmployeesEO.EmployeeId"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="Loan2"
+    Cardinality="-1"
+    Owner="model.eo.LoanEO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Loan2"/>
+      <Attr Name="_foreignKey" Value="model.eo.LoanEO.VerificationEmp"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.LoanEO.VerificationEmployee"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

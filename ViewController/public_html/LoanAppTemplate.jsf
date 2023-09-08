@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<af:pageTemplateDef xmlns:af="http://xmlns.oracle.com/adf/faces/rich" var="attrs" definition="private"
+                    xmlns:afc="http://xmlns.oracle.com/adf/faces/rich/component" xmlns:f="http://java.sun.com/jsf/core">
+    <af:xmlContent>
+        <afc:component>
+            <afc:description/>
+            <afc:display-name>LoanAppTemplate</afc:display-name>
+            <afc:facet>
+                <afc:facet-name>body</afc:facet-name>
+            </afc:facet>
+            <afc:attribute>
+                <afc:attribute-name>
+                    pagTitile
+                </afc:attribute-name>
+                <afc:attribute-class>
+                    java.lang.String
+                </afc:attribute-class>
+            </afc:attribute>
+        </afc:component>
+    </af:xmlContent>
+    <af:panelSplitter orientation="vertical" splitterPosition="50" id="pt_ps1">
+        <f:facet name="first">
+            <af:panelGridLayout id="pt_pgl1">
+                <af:gridRow marginTop="5px" height="auto" id="pt_gr1">
+                    <af:gridCell marginStart="5px" width="34%" id="pt_gc1">
+                        <af:image id="pt_i1" source="/images/loanApp.jpg"/>
+                    </af:gridCell>
+                    <af:gridCell marginStart="5px" width="33%" id="pt_gc2">
+                        <af:outputText value="#{sessionScope.Role}" id="pt_ot1"/>
+                    </af:gridCell>
+                    <af:gridCell marginStart="5px" width="33%" marginEnd="5px" id="pt_gc3">
+                        <af:panelGroupLayout id="pt_pgl2" layout="horizontal" halign="right">
+                            <af:menu text="#{sessionScope.username}" id="pt_m1">
+                                <af:commandMenuItem text="Logout" id="pt_cmi1"/>
+                            </af:menu>
+                        </af:panelGroupLayout>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="pt_gr2">
+                    <af:gridCell marginStart="5px" columnSpan="3" marginEnd="5px" id="pt_gc4"/>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </f:facet>
+        <f:facet name="second">
+            <af:decorativeBox theme="dark" id="pt_db2">
+                <f:facet name="center">
+                    <af:decorativeBox theme="medium" id="pt_db1">
+                        <f:facet name="center">
+                            <af:facetRef facetName="body"/>
+                        </f:facet>
+                    </af:decorativeBox>
+                </f:facet>
+            </af:decorativeBox>
+        </f:facet>
+    </af:panelSplitter>
+</af:pageTemplateDef>

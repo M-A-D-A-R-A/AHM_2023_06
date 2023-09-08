@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ApplicationFkVL"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  EntityAssociation="model.eo.assoc.ApplicationFkASSEC">
+  <ViewLinkDefEnd
+    Name="LoanBank"
+    Cardinality="1"
+    Source="true"
+    Owner="model.vo.LoanBankVO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="LoanBank"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.vo.LoanBankVO.LoanBankId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="Loan"
+    Cardinality="-1"
+    Owner="model.vo.LoanVO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="Loan"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.vo.LoanVO.ApplicationId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

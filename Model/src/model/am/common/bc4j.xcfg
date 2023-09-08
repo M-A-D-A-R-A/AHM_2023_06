@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!---->
+<BC4JConfig xmlns="http://xmlns.oracle.com/bc4j/configuration" version="11.1">
+  <AppModuleConfigBag ApplicationName="model.am.LoanAPPModule">
+    <AppModuleConfig name="LoanAPPModuleLocal" jbo.project="model.Model" ApplicationName="model.am.LoanAPPModule"
+                     DeployPlatform="LOCAL">
+      <Database jbo.TypeMapEntries="OracleApps" JDBCDataSource="java:comp/env/jdbc/loanDS"/>
+      <Security AppModuleJndiName="model.am.LoanAPPModule"/>
+    </AppModuleConfig>
+    <AppModuleConfig name="LoanAPPModuleShared" jbo.project="model.Model" ApplicationName="model.am.LoanAPPModule"
+                     DeployPlatform="LOCAL">
+      <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+      <Database jbo.TypeMapEntries="OracleApps" JDBCDataSource="java:comp/env/jdbc/loanDS"/>
+      <Security AppModuleJndiName="model.am.LoanAPPModule"/>
+    </AppModuleConfig>
+  </AppModuleConfigBag>
+</BC4JConfig>

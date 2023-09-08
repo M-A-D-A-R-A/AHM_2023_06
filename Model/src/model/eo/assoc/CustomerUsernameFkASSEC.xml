@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CustomerUsernameFkASSEC"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="LoginDetails"
+    Cardinality="1"
+    Source="true"
+    Owner="model.eo.LoginDetailsEO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="LoginDetails"/>
+      <Attr Name="_foreignKey" Value="model.eo.LoginDetailsEO.UsernamePk"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.LoginDetailsEO.Username"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="Customer"
+    Cardinality="-1"
+    Owner="model.eo.CustomerEO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Customer"/>
+      <Attr Name="_foreignKey" Value="model.eo.CustomerEO.CustomerUsernameFk"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.CustomerEO.CustomerUsername"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>
