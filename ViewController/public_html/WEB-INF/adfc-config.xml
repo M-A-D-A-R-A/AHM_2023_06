@@ -6,9 +6,59 @@
   <view id="dashboard">
     <page>/dashboard.jsf</page>
   </view>
-  <view id="customer">
-    <page>/customer.jsf</page>
-  </view>
+  <router id="RoleRouter">
+    <case id="__4">
+      <expression>#{sessionScope.Role == 'Customer'}</expression>
+      <outcome>customer</outcome>
+    </case>
+    <case id="__3">
+      <expression>#{sessionScope.Role == 'Pickup'}</expression>
+      <outcome>pickup</outcome>
+    </case>
+    <case id="__14">
+      <expression>#{sessionScope.Role == 'Verification'}</expression>
+      <outcome>verification</outcome>
+    </case>
+    <case id="__15">
+      <expression>#{sessionScope.Role == 'Legal'}</expression>
+      <outcome>legal</outcome>
+    </case>
+    <case id="__16">
+      <expression>#{sessionScope.Role == 'Admin'}</expression>
+      <outcome>admin</outcome>
+    </case>
+    <default-outcome>index</default-outcome>
+  </router>
+  <task-flow-call id="CustomerTaskFlow">
+    <task-flow-reference>
+      <document>/WEB-INF/CustomerTaskFlow.xml</document>
+      <id>CustomerTaskFlow</id>
+    </task-flow-reference>
+  </task-flow-call>
+  <task-flow-call id="PickupTaskFlow">
+    <task-flow-reference>
+      <document>/WEB-INF/PickupTaskFlow.xml</document>
+      <id>PickupTaskFlow</id>
+    </task-flow-reference>
+  </task-flow-call>
+  <task-flow-call id="AdminTaskFLow">
+    <task-flow-reference>
+      <document>/WEB-INF/AdminTaskFLow.xml</document>
+      <id>AdminTaskFLow</id>
+    </task-flow-reference>
+  </task-flow-call>
+  <task-flow-call id="LegalTaskFlow">
+    <task-flow-reference>
+      <document>/WEB-INF/LegalTaskFlow.xml</document>
+      <id>LegalTaskFlow</id>
+    </task-flow-reference>
+  </task-flow-call>
+  <task-flow-call id="VerificationTaskFlow">
+    <task-flow-reference>
+      <document>/WEB-INF/VerificationTaskFlow.xml</document>
+      <id>VerificationTaskFlow</id>
+    </task-flow-reference>
+  </task-flow-call>
   <control-flow-rule id="__5">
     <from-activity-id>*</from-activity-id>
     <control-flow-case id="__6">
@@ -19,9 +69,32 @@
       <from-outcome>index</from-outcome>
       <to-activity-id>index</to-activity-id>
     </control-flow-case>
-    <control-flow-case id="__3">
+    <control-flow-case id="__12">
+      <from-outcome>role</from-outcome>
+      <to-activity-id>RoleRouter</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__10">
+    <from-activity-id>RoleRouter</from-activity-id>
+    <control-flow-case id="__11">
       <from-outcome>customer</from-outcome>
-      <to-activity-id>customer</to-activity-id>
+      <to-activity-id>CustomerTaskFlow</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__2">
+      <from-outcome>pickup</from-outcome>
+      <to-activity-id>PickupTaskFlow</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__8">
+      <from-outcome>admin</from-outcome>
+      <to-activity-id>AdminTaskFLow</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__9">
+      <from-outcome>legal</from-outcome>
+      <to-activity-id>LegalTaskFlow</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__13">
+      <from-outcome>verification</from-outcome>
+      <to-activity-id>VerificationTaskFlow</to-activity-id>
     </control-flow-case>
   </control-flow-rule>
   <managed-bean id="__1">

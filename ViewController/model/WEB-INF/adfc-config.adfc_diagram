@@ -22,11 +22,11 @@
       <property
          name="activityId">dashboard</property>
       <property
-         name="x">251.8789</property>
+         name="x">766.8789</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>dashboard&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">299.3672</property>
+         name="y">269.23438</property>
       <property
          name="page">/dashboard.jsf</property>
       <property
@@ -49,7 +49,7 @@
       <property
          name="fromOutcome">dashboard</property>
       <property
-         name="sdm:polyPoints">L45,588.0,376.80078,292.8789,299.30078,R50</property>
+         name="sdm:polyPoints">R50,660.0,380.30078,766.8789,323.16797,B50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -61,29 +61,162 @@
       <property
          name="sdm:polyPoints">L55,588.0,383.80078,302.5,494.30078,R50</property>
    </ControlFlowCase>
-   <View
-      id="View11">
+   <Router
+      id="Router15">
       <property
-         name="activityId">customer</property>
+         name="activityId">RoleRouter</property>
       <property
-         name="x">581.5</property>
+         name="x">375.0</property>
       <property
-         name="description">&lt;html>&lt;p>&lt;b>customer&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+         name="description">&lt;html>&lt;p>&lt;b>RoleRouter&lt;/b>&lt;/p>&lt;p>Activity Type:  Router&lt;/p></property>
       <property
-         name="y">264.3672</property>
-      <property
-         name="page">/customer.jsf</property>
+         name="y">212.07031</property>
       <property
          name="exceptionHandler">false</property>
-   </View>
+   </Router>
+   <TaskFlowCall
+      id="TaskFlowCall19">
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>CustomerTaskFlow&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Call&lt;/p></property>
+      <property
+         name="activityId">CustomerTaskFlow</property>
+      <property
+         name="x">384.1953</property>
+      <property
+         name="y">-13.097656</property>
+      <property
+         name="documentReference">/WEB-INF/CustomerTaskFlow.xml</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="taskFlowId">CustomerTaskFlow</property>
+   </TaskFlowCall>
    <ControlFlowCase
       islink="true"
-      id="ControlFlowCase12"
-      from="WildcardControlFlowRule7"
-      to="View11">
+      id="ControlFlowCase20"
+      from="Router15"
+      to="TaskFlowCall19">
       <property
          name="fromOutcome">customer</property>
       <property
-         name="sdm:polyPoints">T50,624.0,337.80078,581.5,318.30078,B50</property>
+         name="sdm:polyPoints">T44,371.5,155.91792,384.1953,40.835938,B50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase21"
+      from="WildcardControlFlowRule7"
+      to="Router15">
+      <property
+         name="fromOutcome">role</property>
+      <property
+         name="sdm:polyPoints">L45,588.0,376.80078,416.0,212.0039,R50</property>
+   </ControlFlowCase>
+   <TaskFlowCall
+      id="TaskFlowCall12">
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>PickupTaskFlow&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Call&lt;/p></property>
+      <property
+         name="activityId">PickupTaskFlow</property>
+      <property
+         name="x">539.0635</property>
+      <property
+         name="y">80.16797</property>
+      <property
+         name="documentReference">/WEB-INF/PickupTaskFlow.xml</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="taskFlowId">PickupTaskFlow</property>
+   </TaskFlowCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase13"
+      from="Router15"
+      to="TaskFlowCall12">
+      <property
+         name="fromOutcome">pickup</property>
+      <property
+         name="sdm:polyPoints">T56,378.5,158.0039,498.06348,80.10156,L50</property>
+   </ControlFlowCase>
+   <TaskFlowCall
+      id="TaskFlowCall14">
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>AdminTaskFLow&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Call&lt;/p></property>
+      <property
+         name="activityId">AdminTaskFLow</property>
+      <property
+         name="x">143.0</property>
+      <property
+         name="y">80.734375</property>
+      <property
+         name="documentReference">/WEB-INF/AdminTaskFLow.xml</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="taskFlowId">AdminTaskFLow</property>
+   </TaskFlowCall>
+   <TaskFlowCall
+      id="TaskFlowCall15">
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>LegalTaskFlow&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Call&lt;/p></property>
+      <property
+         name="activityId">LegalTaskFlow</property>
+      <property
+         name="x">130.0</property>
+      <property
+         name="y">238.73438</property>
+      <property
+         name="documentReference">/WEB-INF/LegalTaskFlow.xml</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="taskFlowId">LegalTaskFlow</property>
+   </TaskFlowCall>
+   <TaskFlowCall
+      id="TaskFlowCall16">
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>VerificationTaskFlow&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Call&lt;/p></property>
+      <property
+         name="activityId">VerificationTaskFlow</property>
+      <property
+         name="x">247.0</property>
+      <property
+         name="y">368.73438</property>
+      <property
+         name="documentReference">/WEB-INF/VerificationTaskFlow.xml</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="taskFlowId">VerificationTaskFlow</property>
+   </TaskFlowCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase17"
+      from="Router15"
+      to="TaskFlowCall14">
+      <property
+         name="fromOutcome">admin</property>
+      <property
+         name="sdm:polyPoints">L42,334.0,205.0039,184.0,80.66797,R50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase18"
+      from="Router15"
+      to="TaskFlowCall15">
+      <property
+         name="fromOutcome">legal</property>
+      <property
+         name="sdm:polyPoints">L50,332.16772,212.0039,171.0,238.66797,R50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase19"
+      from="Router15"
+      to="TaskFlowCall16">
+      <property
+         name="fromOutcome">verification</property>
+      <property
+         name="sdm:polyPoints">L58,334.0,219.0039,247.0,314.66797,T50</property>
    </ControlFlowCase>
 </SDM>

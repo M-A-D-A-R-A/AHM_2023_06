@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">customer</property>
+      <property
+         name="x">345.5</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>customer&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">277.23828</property>
+      <property
+         name="page">/customer.jsf</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <View
+      id="View3">
+      <property
+         name="activityId">CustomerNext</property>
+      <property
+         name="x">548.9619</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>CustomerNext&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">266.96875</property>
+      <property
+         name="page">/CustomerNext.jsf</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="View2"
+      to="View3">
+      <property
+         name="fromOutcome">next</property>
+      <property
+         name="sdm:polyPoints">R50,386.5,277.17188,507.9619,266.90234,L50</property>
+   </ControlFlowCase>
+</SDM>

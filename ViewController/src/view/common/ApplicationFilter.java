@@ -31,7 +31,7 @@ public class ApplicationFilter implements Filter
     HttpServletRequest req = (HttpServletRequest) request;
     HttpServletResponse res = (HttpServletResponse) response;
     String uri = req.getRequestURI();
-
+    System.out.println("request from :"+uri);    
     if (!uri.toLowerCase().endsWith("index.jspx") && !uri.toLowerCase().endsWith("login.jsf"))
     {
       HttpSession session = req.getSession(false);

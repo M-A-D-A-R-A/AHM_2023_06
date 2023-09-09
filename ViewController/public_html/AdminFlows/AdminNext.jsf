@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE html>
 <f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
-    <af:document title="dashboard.jsf" id="d1">
+    <af:document title="AdminNext.jsf" id="d1">
         <af:form id="f1">
-           <af:panelHeader text="${sessionScope.Role}" id="ph1">
+            <af:panelHeader text="${sessionScope.username}" id="ph1">
                 <f:facet name="context"/>
                 <f:facet name="toolbar">
                          <af:button text="Logout" id="b1" action="#{login.logoutAction}"/>
-                    </f:facet>
+                </f:facet>
                 <f:facet name="menuBar"/>
                 <f:facet name="legend"/>
                 <f:facet name="info"/>

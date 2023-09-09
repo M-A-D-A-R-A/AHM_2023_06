@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">legal</property>
+      <property
+         name="x">310.5</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>legal&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">173.76953</property>
+      <property
+         name="page">/legal.jsf</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <View
+      id="View3">
+      <property
+         name="activityId">LegalNext</property>
+      <property
+         name="x">487.5</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>LegalNext&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">167.16797</property>
+      <property
+         name="page">/LegalNext.jsf</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="View2"
+      to="View3">
+      <property
+         name="fromOutcome">next</property>
+      <property
+         name="sdm:polyPoints">R50,351.5,173.70312,446.5,167.16797,L50</property>
+   </ControlFlowCase>
+</SDM>

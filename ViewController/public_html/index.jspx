@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
-          xmlns:c="http://java.sun.com/jsp/jstl/core">
-<c:redirect url="faces/login.jsf"/>
-</jsp:root>
+          xmlns:c="http://java.sun.com/jsp/jstl/core" 
+          xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+<c:redirect url="${fn:replace(pageContext.request.requestURL, pageContext.request.requestURI, pageContext.servletContext.contextPath)}/faces/login.jsf"/>
+</jsp:root> 

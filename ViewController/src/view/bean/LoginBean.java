@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 
 import javax.faces.context.FacesContext;
 
+import javax.faces.event.ActionEvent;
+
 import javax.servlet.http.HttpSession;
 
 import oracle.adf.view.rich.component.rich.input.RichInputText;
@@ -63,7 +65,7 @@ public class LoginBean
           String role = rs.getString(3);
           System.out.println("username: " + username + " - password: " + password+ " Role -"+ role);
         MyADFUtil.putInSessionScope("Role", rs.getString(3));
-        return "dashboard";
+        return "role";
       }
     }
     catch (Exception e)
@@ -90,6 +92,7 @@ public class LoginBean
     {
       System.err.println("error in logout -- " + e);
     }
-    return "index";
+    System.out.println("logout in LoginBean");
+    return "logout";
   }
 }

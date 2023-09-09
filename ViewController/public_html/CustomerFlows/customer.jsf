@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="customer.jsf" id="d1">
+        <af:form id="f1">
+            <af:pageTemplate viewId="/LoanAppTemplate.jsf" id="pt1">
+                <f:facet name="body">
+                    <af:outputText value="${sessionScope.Role}" id="ot1"/>
+                    <af:button text="CustomerNext" id="b1" action="next"/>
+                </f:facet>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+</f:view>

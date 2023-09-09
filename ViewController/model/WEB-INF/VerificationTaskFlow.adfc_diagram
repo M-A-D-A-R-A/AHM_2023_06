@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">verification</property>
+      <property
+         name="x">329.35254</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>verification&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">190.90234</property>
+      <property
+         name="page">/EmpVerificationFlows/verification.jsf</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <View
+      id="View3">
+      <property
+         name="activityId">VerificationNext</property>
+      <property
+         name="x">515.86914</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>VerificationNext&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">189.23438</property>
+      <property
+         name="page">/EmpVerificationFlows/VerificationNext.jsf</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="View2"
+      to="View3">
+      <property
+         name="fromOutcome">next</property>
+      <property
+         name="sdm:polyPoints">R50,370.35254,190.83594,474.86914,189.16797,L50</property>
+   </ControlFlowCase>
+</SDM>
